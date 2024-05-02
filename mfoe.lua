@@ -2,7 +2,7 @@ socket = require "socket"
 
 function fade_out()
   for i=0,-100,-5 do
-    mp.set_property("brightness", i)
+    mp.set_property("contrast", i)
     socket.sleep(0.03)
   end
 
