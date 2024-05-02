@@ -1,8 +1,13 @@
 socket = require "socket"
 
 function fade_out()
-  for i=0,-100,-5 do
-    mp.set_property("contrast", i)
+  for i=0,20,1 do
+    contrast = -5 * i
+    volume = math.min(100, 200 - 10 * i)
+
+    mp.set_property("contrast", contrast)
+    mp.set_property("volume", volume)
+
     socket.sleep(0.03)
   end
 
